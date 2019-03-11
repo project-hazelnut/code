@@ -20,14 +20,14 @@ ina.configure(voltage_range=ina.RANGE_16V,
 power_measurements = []
 
 # power measurement delay in seconds (1, 2, 4, 8, 16, 32, 64, 100)
-MEASUREMENT = "wake_every_48s"
+MEASUREMENT = "wake_every_16s"
 POWER_MEASUREMENT_DELAY = 0.1
 
 def main():
     start_time = last_iteration_time = time.time()
     elapsed_time = 0
     
-    while elapsed_time < 480:
+    while elapsed_time < 160:
         power_reading = ina.power()
         
         print([MEASUREMENT, power_reading], " elapsed time ", elapsed_time)
